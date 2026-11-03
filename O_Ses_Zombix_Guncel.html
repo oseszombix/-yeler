@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d10">
+<title>O Ses Zombix | Gitar Yarışması</title>
+<style>
+:root{--bg:#0b090b;--panel:#151116;--panel2:#1c161d;--line:#342631;--red:#8e1839;--red2:#bd2852;--white:#f7f2f4;--muted:#b7aab1;--gold:#f2c56b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#4b142b 0,transparent 38%),linear-gradient(180deg,#100c10,#09080a 60%);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:linear-gradient(115deg,transparent 48%,#fff 49%,transparent 50%),linear-gradient(65deg,transparent 48%,#fff 49%,transparent 50%);background-size:220px 220px;mask-image:linear-gradient(to bottom,#000,transparent 65%)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 34px));margin:auto;position:relative}.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid #ffffff15}.brand{font-size:13px;font-weight:900;letter-spacing:.22em;color:#e8dce2}.brand span{color:#e34c76}.live{font-size:11px;letter-spacing:.15em;color:#f2a6bb;border:1px solid #87304d;border-radius:99px;padding:6px 11px;background:#48132655}
+.hero{min-height:570px;display:grid;place-items:center;text-align:center;padding:76px 12px 68px;position:relative;overflow:hidden}.hero:before,.hero:after{content:"";position:absolute;top:-70px;width:2px;height:340px;background:linear-gradient(#ffd8e7,transparent);opacity:.55;transform:rotate(25deg);filter:blur(2px)}.hero:before{left:15%}.hero:after{right:15%;transform:rotate(-25deg)}.eyebrow{color:#e58ba7;font-size:11px;letter-spacing:.35em;font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(48px,10vw,104px);line-height:.98;letter-spacing:-.065em;margin:18px 0 14px;font-weight:1000;text-shadow:0 8px 40px #d52b5a55}.hero h1 span{color:#e03c6c}.hero .sub{font-size:clamp(17px,3vw,23px);font-weight:700;margin:0 0 12px}.hero p{max-width:670px;color:var(--muted);margin:0 auto}.hero-mark{font-size:42px;margin-bottom:10px;filter:drop-shadow(0 0 18px #e03c6c77)}.hero-line{width:100px;height:3px;background:linear-gradient(90deg,transparent,var(--red2),transparent);margin:28px auto}
+.section{padding:38px 0 30px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:22px}.kicker{font-size:10px;letter-spacing:.24em;color:#d66b8b;font-weight:900}.section h2{font-size:clamp(25px,5vw,36px);letter-spacing:-.04em;line-height:1.15;margin:5px 0 0}.section-note{color:var(--muted);font-size:13px;max-width:380px;text-align:right}
+.jury-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.jury{background:linear-gradient(145deg,#251720,#131014);border:1px solid #573044;border-radius:17px;padding:22px 18px;position:relative;overflow:hidden;transition:.25s}.jury:after{content:"";position:absolute;width:110px;height:110px;border:1px solid #9c315355;border-radius:50%;right:-35px;top:-40px;box-shadow:0 0 0 14px #9c315311,0 0 0 28px #9c315308}.jury:hover,.contestant:hover,.prize:hover{transform:translateY(-4px);border-color:#b43c62;box-shadow:0 12px 30px #0006}.jury-icon{font-size:25px}.jury h3{font-size:20px;letter-spacing:.08em;margin:9px 0 3px}.tag{display:inline-block;font-size:9px;letter-spacing:.15em;font-weight:900;color:#f4a4bb;background:#62203a66;border:1px solid #8e3454;border-radius:99px;padding:4px 9px}.jury p{color:var(--muted);font-size:12px;margin:13px 0 0}.jury strong{color:#fff}
+.contestants{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.contestant{display:flex;align-items:center;gap:12px;padding:14px;background:linear-gradient(145deg,#1c171d,#111014);border:1px solid #332630;border-radius:12px;transition:.22s}.number{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;background:#5b1c35;color:#ffb2c8;font-size:12px;font-weight:900;flex-shrink:0}.contestant span:last-child{font-size:13px;font-weight:800;letter-spacing:.04em;overflow-wrap:anywhere}
+.rounds{display:grid;grid-template-columns:1fr 1fr;gap:14px}.round{border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#1c161c,#100e11);padding:23px;position:relative}.round.final{border-color:#784052;background:linear-gradient(145deg,#2b1721,#120e12)}.round-no{font-size:10px;letter-spacing:.2em;color:#e47b9a;font-weight:900}.round h3{font-size:22px;margin:5px 0 12px}.round ul{padding-left:18px;margin:0;color:#c8bbc2;font-size:13px}.round li{padding:4px 0}.round li::marker{color:#d94a75}.round .count{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 12px;border-radius:9px;background:#6b1d3b55;color:#ffc0d1;font-size:11px;font-weight:900}
+.flowbox{padding:25px 18px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(150deg,#1a141a,#0e0c0f);text-align:center}.flow-step{width:min(390px,100%);margin:auto;padding:12px 15px;border:1px solid #543044;background:#211720;border-radius:10px;font-size:13px;font-weight:900;letter-spacing:.06em}.flow-step.highlight{background:linear-gradient(90deg,#671b39,#9e2348);border-color:#c24b70}.flow-step.winners{border-color:#8a6a32;background:linear-gradient(90deg,#352714,#5b411c);color:#ffe0a1}.down{color:#d85a80;font-size:22px;line-height:1.7}.flow-caption{font-size:10px;color:#bdaeb6;margin:6px 0 10px;letter-spacing:.1em}
+.prizes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}.prize{border:1px solid var(--line);border-radius:17px;text-align:center;padding:25px 14px;background:linear-gradient(155deg,#201a20,#110e12);transition:.25s;position:relative;overflow:hidden}.prize.first{border-color:#a98243;background:radial-gradient(circle at 50% 0,#74532166,transparent 55%),linear-gradient(155deg,#282016,#110e12);transform:translateY(-7px)}.prize .medal{font-size:43px;filter:drop-shadow(0 5px 12px #0008)}.prize h3{font-size:13px;letter-spacing:.17em;margin:10px 0 4px;color:#e8d9df}.prize .gift{font-size:clamp(19px,3vw,25px);font-weight:1000;letter-spacing:-.03em}.prize.first .gift{color:#ffdc91}.prize p{font-size:11px;color:var(--muted);margin:9px 0 0}
+.score-layout{display:grid;grid-template-columns:1fr 1fr;gap:14px}.score-card,.rules{border:1px solid var(--line);border-radius:15px;background:#151116;padding:20px}.score-table{width:100%;border-collapse:collapse;font-size:13px}.score-table th{text-align:left;color:#d88ba2;font-size:10px;letter-spacing:.12em;padding:8px;border-bottom:1px solid #4b303e}.score-table td{padding:10px 8px;border-bottom:1px solid #ffffff0d}.score-table td:last-child{text-align:right;font-weight:800}.score-table tr.total td{color:#ffd0dd;border-top:1px solid #7d3652;border-bottom:0;font-weight:1000}.example{font-size:11px;color:#c7aab5;margin:12px 0 0}.rules h3{margin:0 0 12px;font-size:18px}.rules ul{padding-left:18px;color:#c8bbc2;font-size:12px;margin:0}.rules li{padding:4px 0}.rules li::marker{color:#df557c}
+.footer{text-align:center;padding:55px 15px 40px;margin-top:35px;border-top:1px solid #ffffff12;background:linear-gradient(180deg,transparent,#210d17)}.footer .mic{font-size:30px}.footer h2{font-size:clamp(36px,8vw,65px);letter-spacing:-.06em;margin:5px 0;color:#fff;text-shadow:0 0 30px #d72d5d55}.footer p{color:#bdaeb6;font-size:12px;margin:0}.copyright{font-size:10px;color:#71636b;margin-top:28px;letter-spacing:.12em}
+@media(max-width:720px){.jury-grid{grid-template-columns:1fr 1fr}.contestants{grid-template-columns:repeat(2,1fr)}.rounds,.score-layout{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.section-note{text-align:left}.hero{min-height:510px;padding-top:65px}.prizes{gap:8px}.prize{padding:19px 8px}.prize .medal{font-size:34px}.prize h3{font-size:10px}.prize .gift{font-size:17px}.prize p{font-size:10px}}
+@media(max-width:420px){.wrap{width:min(100% - 24px,1080px)}.jury-grid{grid-template-columns:1fr}.jury{padding:17px}.contestants{gap:8px}.contestant{padding:11px 9px;gap:8px}.number{width:30px;height:30px}.contestant span:last-child{font-size:11px}.prizes{grid-template-columns:1fr}.prize.first{transform:none}.prize{display:grid;grid-template-columns:48px 1fr;grid-template-rows:auto auto;text-align:left;align-items:center;column-gap:10px;padding:14px 17px}.prize .medal{grid-row:1/3}.prize h3{margin:0}.prize .gift{font-size:20px}.prize p{grid-column:2;margin:0}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="wrap topbar"><div class="brand">ZOMBIX <span>●</span> SAHNE ORGANİZASYONU</div><div class="live">♪ GİTAR YARIŞMASI</div></header>
+<main>
+<section class="wrap hero">
+  <div>
+    <div class="hero-mark">🎸</div>
+    <div class="eyebrow">ZOMBIX ONLINE SUNAR</div>
+    <h1>O SES <span>ZOMBIX</span></h1>
+    <div class="sub">Zombix'in en yetenekli gitaristleri sahnede!</div>
+    <p>Yarışmacılar gitar performanslarını sergileyecek, jüri üyeleri performansları 10 üzerinden puanlayacak ve büyük finalde 3 kazanan belli olacak!</p>
+    <div class="hero-line"></div>
+    <div class="eyebrow">2 TUR · 12 YARIŞMACI · 3 KAZANAN</div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><div><div class="kicker">KARAR KOLTUĞUNDA</div><h2>Jüri üyeleri</h2></div><div class="section-note">Her jüri, her performansa bağımsız olarak 10 üzerinden puan verir.</div></div>
+  <div class="jury-grid">
+    <article class="jury"><div class="jury-icon">🎙️</div><h3>BORDO</h3><span class="tag">JÜRİ ÜYESİ</span><p>Performansını değerlendirir. <strong>Maksimum 10 puan.</strong></p></article>
+    <article class="jury"><div class="jury-icon">🎙️</div><h3>EMİR</h3><span class="tag">JÜRİ ÜYESİ</span><p>Performansını değerlendirir. <strong>Maksimum 10 puan.</strong></p></article>
+    <article class="jury"><div class="jury-icon">🎙️</div><h3>EREN</h3><span class="tag">JÜRİ ÜYESİ</span><p>Performansını değerlendirir. <strong>Maksimum 10 puan.</strong></p></article>
+  </div>
+  <p class="example">Her turda alınabilecek en yüksek toplam puan: <strong>30/30</strong>.</p>
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><div><div class="kicker">SAHNEYE ÇIKACAK İSİMLER</div><h2>12 yarışmacı</h2></div><div class="section-note">Sahne sırasına göre yarışmacı listesi.</div></div>
+  <div class="contestants">
+    <div class="contestant"><span class="number">01</span><span>MEHMET</span></div>
+    <div class="contestant"><span class="number">02</span><span>SONER</span></div>
+    <div class="contestant"><span class="number">03</span><span>DESPAİR</span></div>
+    <div class="contestant"><span class="number">04</span><span>BADBAND</span></div>
+    <div class="contestant"><span class="number">05</span><span>EGE</span></div>
+    <div class="contestant"><span class="number">06</span><span>KERİMCE</span></div>
+    <div class="contestant"><span class="number">07</span><span>DEMOKRAT</span></div>
+    <div class="contestant"><span class="number">08</span><span>FAKO</span></div>
+    <div class="contestant"><span class="number">09</span><span>PANDAXS</span></div>
+    <div class="contestant"><span class="number">10</span><span>LAST REVENGE</span></div>
+    <div class="contestant"><span class="number">11</span><span>RAGNAR</span></div>
+    <div class="contestant"><span class="number">12</span><span>ATAKAN</span></div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><div><div class="kicker">YARIŞMA FORMATI</div><h2>İki tur, tek büyük final</h2></div></div>
+  <div class="rounds">
+    <article class="round"><div class="round-no">01 / ELEME</div><h3>1. Tur — Eleme Turu</h3><ul><li>12 yarışmacı sırayla performansını sergiler.</li><li>Üç jüri üyesi de her yarışmacıya 10 üzerinden puan verir.</li><li>Puanlar toplanır ve sıralama oluşturulur.</li><li>En yüksek puanı alan ilk 6 yarışmacı finale çıkar.</li></ul><div class="count">12 YARIŞMACI → 6 FİNALİST</div></article>
+    <article class="round final"><div class="round-no">02 / BÜYÜK FİNAL</div><h3>2. Tur — Büyük Final</h3><ul><li>İlk turu geçen 6 finalist yeniden sahneye çıkar.</li><li>Her finalist yeni performansıyla tekrar değerlendirilir.</li><li>Üç jüri üyesi yeniden 10 üzerinden puan verir.</li><li>Final puanlarına göre ilk 3 derece ve ödüller belirlenir.</li></ul><div class="count">6 FİNALİST → 3 ÖDÜL</div></article>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><div><div class="kicker">YOLUN SONU ÖDÜLLE BİTSİN</div><h2>Büyük final ödülleri</h2></div><div class="section-note">Final sıralamasında ilk üçe giren yarışmacılar ödüllerini kazanır.</div></div>
+  <div class="prizes">
+    <article class="prize first"><div class="medal">🥇</div><h3>1. YE</h3><div class="gift">PASS</div><p>Büyük şampiyonun ödülü</p></article>
+    <article class="prize"><div class="medal">🥈</div><h3>2. YE</h3><div class="gift">2020 PUMPKIN</div><p>İkincilik ödülü</p></article>
+    <article class="prize"><div class="medal">🥉</div><h3>3. YE</h3><div class="gift">NOEL ŞAPKASI</div><p>Üçüncülük ödülü</p></article>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><div><div class="kicker">PUANLAMA VE KURALLAR</div><h2>Adil değerlendirme</h2></div></div>
+  <div class="score-layout">
+    <div class="score-card">
+      <h3 style="margin:0 0 12px;font-size:17px">Örnek puanlama</h3>
+      <table class="score-table"><thead><tr><th>JÜRİ</th><th style="text-align:right">VERİLEN PUAN</th></tr></thead><tbody><tr><td>Bordo</td><td>8/10</td></tr><tr><td>Emir</td><td>9/10</td></tr><tr><td>Eren</td><td>7/10</td></tr><tr class="total"><td>TOPLAM</td><td>24/30</td></tr></tbody></table>
+      <p class="example">Bu tablo yalnızca puanlama sistemini anlatmak için hazırlanmış bir örnektir.</p>
+    </div>
+    <div class="rules">
+      <h3>Yarışma kuralları</h3>
+      <ul>
+        <li>Her yarışmacı performansını gitarıyla sergilemelidir.</li>
+        <li>Her jüri üyesi maksimum 10 puan verebilir.</li>
+        <li>Jüri üyeleri değerlendirmelerini birbirinden bağımsız yapar.</li>
+        <li>Her turda yeniden puanlama yapılır.</li>
+        <li>İlk turda en yüksek puanı alan 6 kişi finale yükselir.</li>
+        <li>İkinci turda en yüksek puanı alan 3 kişi ödül kazanır.</li>
+        <li>Eşit puan durumunda jüri ortak değerlendirmeyle dereceyi belirler.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><div><div class="kicker">YARIŞMA AKIŞI</div><h2>12 kişiden 3 kazanana</h2></div></div>
+  <div class="flowbox">
+    <div class="flow-step">🎸 12 YARIŞMACI</div><div class="down">↓</div>
+    <div class="flow-step highlight">1. TUR — ELEME</div><div class="down">↓</div>
+    <div class="flow-step">6 YARIŞMACI ELENİR</div><div class="flow-caption">İLK 6 YARIŞMACI YOLUNA DEVAM EDER</div><div class="down">↓</div>
+    <div class="flow-step">6 FİNALİST</div><div class="down">↓</div>
+    <div class="flow-step highlight">2. TUR — BÜYÜK FİNAL</div><div class="down">↓</div>
+    <div class="flow-step winners">🥇 1. YE &nbsp; · &nbsp; 🥈 2. YE &nbsp; · &nbsp; 🥉 3. YE</div>
+  </div>
+</section>
+</main>
+<footer class="footer"><div class="mic">🎤</div><h2>SAHNE SENİN!</h2><p>Gitarını hazırla. Performansını sergile. O Ses Zombix'te iz bırak.</p><div class="copyright">O SES ZOMBIX · ZOMBIX ONLINE TOPLULUK ETKİNLİĞİ</div></footer>
+</body>
+</html>
